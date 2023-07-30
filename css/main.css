@@ -1,10 +1,10 @@
 :root {
-  --color-bg: #2a9d8f;
-  --color-bg-dark: #268d81;
-  --color-bg-darker: #1d6e64;
-  --color-fg: #264653;
+  --color-bg: #268d81;
+  --color-fg: #e9c46a;
   --color-white: #ffffff;
-  --color-grey: #e9eaeb;
+  --color-black: #333333;
+  --color-grey-dark: #d6d6d6;
+  --color-grey: #ebebeb;
 }
 
 * {
@@ -18,12 +18,12 @@ html, body {
 
 body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   font-family: 'Rubik', sans-serif;
-  color: var(--color-fg);
+  color: var(--color-black);
 }
 
-@media screen and (min-width: 60em){
+@media screen and (min-width: 40em){
   body {
     font-size: 1.25rem;
   }
@@ -41,32 +41,41 @@ header h1 {
   margin: 0;
   font-family: 'Domine', serif;
   color: var(--color-white);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
-@media screen and (min-width: 60em){
+@media screen and (min-width: 40em){
   header h1 {
     font-size: 1.75rem;
   }
 }
 
-header a {
+nav {
+  margin: 1.5rem 1rem;
+  padding: .5rem;
+  background-color: var(--color-grey);
+  border-radius: 1.5rem;
+  display: flex;
+}
+
+nav a {
   color: var(--color-white);
   display: inline-block;
   padding: .5rem 1rem;
   text-align: center;
-  background-color: #268d81;
   border-radius: 1rem;
   text-decoration: none;
   font-size: .875rem;
+  flex: 1 0 auto;
+  color: var(--color-black);
 }
 
-header a.selected {
-  background-color: var(--color-bg-darker);
+nav a.selected {
+  background-color: var(--color-fg);
 }
 
 main {
-  padding: 1.5rem;
+  padding: 0 1.5rem 3rem;
 }
 
 main h2 {
@@ -75,7 +84,7 @@ main h2 {
   font-weight: 500;
 }
 
-@media screen and (min-width: 60em){
+@media screen and (min-width: 40em){
   main h2 {
     font-size: 1.25rem;
   }
@@ -122,11 +131,20 @@ main ul span {
 }
 
 footer {
-  padding: 1.5rem 3rem 1.5rem 1.5rem;
-  background-color: var(--color-bg-darker);
-  color:var(--color-white)
+  padding: 1.5rem;
+  background-color: var(--color-grey);
 }
 
 footer p {
-  font-size: .875rem;
+  font-size: .75rem;
+}
+
+@media screen and (min-width: 40em){
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+footer a {
+  color: var(--color-black);
 }
